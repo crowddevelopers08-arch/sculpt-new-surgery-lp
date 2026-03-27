@@ -1,5 +1,46 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { SectionEyebrow } from "../shared";
+
+const allImages = ["/IMG_6772.png", "/IMG_9914.jpg", "/IMG_9916.png", "/IMG_9917.png"];
+
+function CyclingFrame({ images, delay = 0 }: { images: string[]; delay?: number }) {
+  const [current, setCurrent] = useState(0);
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const interval = setInterval(() => {
+        setFading(true);
+        setTimeout(() => {
+          setCurrent((prev) => (prev + 1) % images.length);
+          setFading(false);
+        }, 500);
+      }, 3500);
+      return () => clearInterval(interval);
+    }, delay);
+    return () => clearTimeout(timer);
+  }, [images.length, delay]);
+
+  return (
+    <div className="glass-frame cycling-frame">
+      <Image
+        src={images[current]}
+        alt="Patient result"
+        width={480}
+        height={480}
+        className={`rounded-image square-image cycling-image${fading ? " cycling-fade" : ""}`}
+      />
+      <div className="cycling-dots">
+        {images.map((_, i) => (
+          <span key={i} className={`cycling-dot${i === current ? " active" : ""}`} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function ResultsSection() {
   return (
@@ -31,29 +72,7 @@ export function ResultsSection() {
 
         <div className="results-gallery reveal delay-1">
           <div className="section-aura pulse-aura" />
-          <div className="results-image-stack">
-            <div className="glass-frame top-shift">
-              <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOlvhn5mhLpCpCOxC8T-Qsabc9-ZxvKqgF4h_hJ-4cok4kEsMhuFlsXNv1iBEs3NKG_w3yTSo3Ifa-CRgjslPIOg--vQ7hK99K7JFP38li_cGV02_6s1t63HHsCogHeIIAcwmGHZyvy6cu4RfOjEORoK9-hRgjI_5G31zikitdDeKwbd4dcrhoIt1_cMmQcULGe0cB83wqVR_0sRbDlZHV_dEAWZn_Rb4hw1ILHdLAtcRCJTE46TvmMIuDASwqbk0w-nWe-_cRsts"
-                alt="Patient result 1"
-                width={480}
-                height={480}
-                className="rounded-image square-image"
-              />
-            </div>
-            <div className="glass-frame">
-              <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGloRCqBu-IQiz8YXzs9UzC9kyAL_6jwUFZxNT3wUqX9XqfZuH7neKa2jCblkrc8i5HK4XH-Lcw0M6KZ8ft2HAJSkQf2Y-ZdUVYS5w51PgKNwDLIVh3_vySwGnDErcKBUHWwspzJSajyUiL2PqTfawAWHEnn919p3MCIdD2uLzrM0m5bvIdR2KCrlumvX4D5UjpQn9IPx_eaHIY1GDPJFvD1l4vhtS3Carr50ON8XqJg8e-qY9oqDMKu-rZYFY_NDoIpsAHBheX1M"
-                alt="Patient result 2"
-                width={480}
-                height={480}
-                className="rounded-image square-image"
-              />
-            </div>
-          </div>
-          <div className="floating-pill reveal delay-2">
-            <span>Clinical Precision</span>
-          </div>
+          <CyclingFrame images={allImages} delay={0} />
         </div>
       </div>
     </section>

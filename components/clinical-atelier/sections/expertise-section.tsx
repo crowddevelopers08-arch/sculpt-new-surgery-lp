@@ -9,7 +9,7 @@ export function ExpertiseSection() {
         <div className="expertise-panel glass-card">
           <div className="expertise-portrait reveal">
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_0tRoSUX4OdTJMHYFo97r5C8j1ajvE0kUNwe5mlHsTBmMFhLDkt3qhpSWu6XIdG2MqDRWWxoETibsHUO-sISYuwLFUcGCl7-cOi5ZUV12cdicSmYqUXn96-UFRJKnHP7G91L_wGlPOVXnbnoVLLFrBeujza63KsQFghJ44hQs0G1pNAMRyPiEHbmmmetokMosD9RZCY4X62J99IbE1mgKdeVtHDrjbMnDzwsD0npd9Mmd-moIvrdh92eU9Ew0CChWH4oWfVTUUyo"
+              src="/a628a650-edbf-4750-a79d-190c50af80a6.png"
               alt="Dr. Priyanka Raj"
               fill
               className="portrait-image"
@@ -17,8 +17,7 @@ export function ExpertiseSection() {
             <div className="portrait-overlay" />
             <div className="portrait-copy reveal delay-2">
               <h3>
-                Dr. Priyanka <br />
-                <span className="accent italic">Raj</span>
+                Dr. Priyanka <span className="accent italic">Raj</span>
               </h3>
               <p>MDS Maxillofacial Surgery Specialist</p>
             </div>
