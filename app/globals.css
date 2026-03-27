@@ -857,7 +857,7 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 2rem);    }
   align-items: center;
 }
 
-.results-gallery  { position: relative; overflow: hidden; }
+.results-gallery  { position: relative; overflow: visible; }
 
 .results-image-stack {
   display: grid;
@@ -880,6 +880,18 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 2rem);    }
   aspect-ratio: unset;
   filter: none !important;
   border-radius: calc(var(--r-lg) - 0.4rem);
+}
+
+@media (max-width: 768px) {
+  .results-gallery .cycling-frame .cycling-image {
+    height: clamp(18rem, 70vw, 26rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .results-gallery .cycling-frame .cycling-image {
+    height: clamp(16rem, 80vw, 22rem);
+  }
 }
 
 .top-shift { transform: translateY(clamp(1.5rem, 3vw, 3rem)); margin-bottom: clamp(1.5rem, 3vw, 3rem); }
