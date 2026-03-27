@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
         <div className="policy-body glass-card reveal delay-1">
 
           <section className="policy-section">
-            <h2>1. Informations We Collect</h2>
+            <h2>1. Information We Collect</h2>
             <p>
               When you submit a consultation request through our website, we
               collect personal information you voluntarily provide, including:
