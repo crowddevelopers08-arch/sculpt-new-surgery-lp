@@ -873,23 +873,27 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 2rem);    }
   width: 100%;
 }
 
-.results-gallery .cycling-frame .cycling-image {
+.cycling-image-wrap {
+  position: relative;
   width: 100%;
   height: clamp(20rem, 31vw, 31rem);
-  object-fit: cover;
-  aspect-ratio: unset;
-  filter: none !important;
   border-radius: calc(var(--r-lg) - 0.4rem);
+  overflow: hidden;
+}
+
+.cycling-image-wrap .cycling-image {
+  object-fit: cover;
+  filter: none !important;
 }
 
 @media (max-width: 768px) {
-  .results-gallery .cycling-frame .cycling-image {
+  .cycling-image-wrap {
     height: clamp(18rem, 70vw, 26rem);
   }
 }
 
 @media (max-width: 480px) {
-  .results-gallery .cycling-frame .cycling-image {
+  .cycling-image-wrap {
     height: clamp(16rem, 80vw, 22rem);
   }
 }

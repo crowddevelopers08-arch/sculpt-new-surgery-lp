@@ -26,13 +26,15 @@ function CyclingFrame({ images, delay = 0 }: { images: string[]; delay?: number 
 
   return (
     <div className="glass-frame cycling-frame">
-      <Image
-        src={images[current]}
-        alt="Patient result"
-        width={480}
-        height={480}
-        className={`rounded-image square-image cycling-image${fading ? " cycling-fade" : ""}`}
-      />
+      <div className="cycling-image-wrap">
+        <Image
+          src={images[current]}
+          alt="Patient result"
+          fill
+          sizes="(max-width: 768px) 90vw, 45vw"
+          className={`cycling-image${fading ? " cycling-fade" : ""}`}
+        />
+      </div>
       <div className="cycling-dots">
         {images.map((_, i) => (
           <span key={i} className={`cycling-dot${i === current ? " active" : ""}`} />
