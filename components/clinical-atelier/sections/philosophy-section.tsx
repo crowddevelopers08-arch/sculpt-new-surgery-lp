@@ -14,6 +14,7 @@ export function PhilosophySection() {
               width={700}
               height={900}
               className="rounded-image tall-image"
+              style={{ filter: "none" }}
             />
           </div>
           <div className="badge-card reveal delay-2">

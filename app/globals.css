@@ -1,3 +1,5 @@
+@import "tailwindcss/utilities" layer(utilities);
+
 /* ═══════════════════════════════════════════════════
    SCULPT — THE MAXILLOFACIAL CLINIC
    Clean responsive stylesheet — mobile-first
@@ -684,7 +686,7 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 2rem);    }
   gap: 1.25rem;
 }
 
-.gallery-col { display: grid; gap: 1.25rem; }
+.gallery-col { display: grid; gap: 1.25rem; align-content: start; }
 .top-offset  { padding-top: clamp(2rem, 4vw, 4rem); }
 
 .metric-card,
@@ -1334,6 +1336,8 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 2rem);    }
 @media (max-width: 768px) {
   body { background-attachment: scroll; }
 
+  .section { padding-top: 2.75rem; padding-bottom: 2.75rem; }
+
   .shell,
   .faq-shell {
     width: calc(100% - 2.5rem);
@@ -1457,6 +1461,8 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 2rem);    }
 
 /* ── 480px: small mobile ── */
 @media (max-width: 480px) {
+  .section { padding-top: 2rem; padding-bottom: 2rem; }
+
   .atelier-page,
   .atelier-page * {
     max-width: 100%;
