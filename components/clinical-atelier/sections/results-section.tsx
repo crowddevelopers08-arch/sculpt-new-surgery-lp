@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SectionEyebrow } from "../shared";
 
-const allImages = ["/IMG_6772.png", "/IMG_9914.jpg", "/IMG_9916.png", "/IMG_9917.png"];
+const allImages = ["/one.png", "/two.jpg", "/three.png", "/four.png"];
 
 function CyclingFrame({ images, delay = 0 }: { images: string[]; delay?: number }) {
   const [current, setCurrent] = useState(0);
