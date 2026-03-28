@@ -17,7 +17,9 @@ export function CtaSection() {
           </p>
           <div className="cta-actions">
             <PrimaryButton>Book My Consultation</PrimaryButton>
+            <a href="#results">
             <OutlineButton>View More Results</OutlineButton>
+            </a>
           </div>
         </div>
       </div>
